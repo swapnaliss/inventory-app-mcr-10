@@ -5,13 +5,13 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
     <Nav defaultActiveKey="/home" className="flex-column">
-      <Nav.Link disabled>
+      <Nav.Link href="/">
         DashBoard
       </Nav.Link>
-      <Nav.Link disabled>
+      <Nav.Link href="/Department">
         Departments
       </Nav.Link>
-      <Nav.Link disabled>
+      <Nav.Link href="/ProductList">
         Products    
   </Nav.Link>
     </Nav>

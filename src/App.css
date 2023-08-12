@@ -6,12 +6,13 @@
   display:flex
 }
 .div1{
-   width: 30%;
+   width: 20%;
 }
 .div2{
   display:flex;
   align-items: center;
-  width: 70%;
+  width: 80%;
+  margin-top: 20px;
 }
 .dashboard{
   display: flex;
@@ -21,5 +22,10 @@
 }
 .sidebar{
   margin-top:50px;
-    
+
+}
+.filter-Section{
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
 }
