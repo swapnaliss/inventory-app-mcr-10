@@ -1,12 +1,19 @@
-import React from "react";
+import React , {useState} from "react";
 import { useParams } from "react-router-dom";
 import { Container, Table , Button, Dropdown,DropdownButton} from "react-bootstrap";
 import { inventoryData } from "./InventoryData";
 
 const ProductList = ({ department }) => {
   const departmentName = useParams();
+  const [showLowStockOnly, setShowLowStockOnly] = useState(false);
+
+  const handleToggleLowStock = () => {
+    setShowLowStockOnly(prevState => !prevState);
+  };
+
   const filterData = inventoryData.filter((inventory) => {
-    return inventory.department === departmentName.department;
+    return inventory.department === departmentName.department  &&
+    (!showLowStockOnly || inventory.stock <= 10);
   });
 
   return (
@@ -17,6 +24,8 @@ const ProductList = ({ department }) => {
         <label>
         <input 
           type="checkbox" 
+          checked={showLowStockOnly}
+            onChange={handleToggleLowStock}
            />
         Low Stock Items
       </label>
